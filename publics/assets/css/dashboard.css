@@ -1,0 +1,91 @@
+/* dashboard.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Section des employés */
+.employee-section {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 50px; /* Espace supplémentaire en bas pour séparer du footer */
+}
+
+/* Formulaire de recherche */
+.search-form {
+    margin-bottom: 20px;
+}
+
+/* Champ de recherche */
+.search-input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Bouton de recherche */
+.search-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Carte d'employé */
+.employee-card {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Informations de l'employé */
+.employee-info {
+    text-align: left;
+}
+
+/* Photo de l'employé */
+.employee-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+/* Actions de l'employé */
+.employee-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Boutons d'action et de blâme */
+.button, .blame-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Changement de couleur au survol des boutons */
+.button:hover, .blame-button:hover {
+    background-color: #0056b3;
+}

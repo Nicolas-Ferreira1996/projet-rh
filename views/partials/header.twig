@@ -1,0 +1,22 @@
+<header>
+	<h1>Mon appli RH</h1>
+	<nav>
+		<ul>
+			{% if company %}
+				<li>
+					<a href="/logout">Déconnexion</a>
+				</li>
+				<li>
+					<a href="/addEmployee">Ajouter un employé</a>
+				</li>
+			{% else %}
+				<li>
+					<a href="/login">Connexion</a>
+				</li>
+				<li>
+					<a href="/signin">Inscription</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
+</header>

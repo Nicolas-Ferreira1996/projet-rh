@@ -1,0 +1,36 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="/assets/css/signin.css">
+{% endblock %}
+
+
+{% block main %}
+    <section class="form-section">
+        <h2>Formulaire d'Inscription</h2>
+
+        <form action="/signin" method="post" class="registration-form">
+            <div class="form-group">
+                <label for="companyName">Nom de la société: </label>
+                <input type="text" id="companyName" name="companyName">
+            </div>
+            <div class="form-group">
+                <label for="siretNumber">Numéro de Siret: </label>
+                <input type="number" id="siretNumber" name="siretNumber">
+            </div>
+            <div class="form-group">
+                <label for="email">Mail: </label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="directorName">Nom du directeur: </label>
+                <input type="text" id="directorName" name="directorName">
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe: </label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit" class="submit-button">S'inscrire</button>
+        </form>
+    </section>
+{% endblock %}

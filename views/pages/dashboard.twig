@@ -1,0 +1,41 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="/assets/css/dashboard.css">
+{% endblock %}
+
+{% block main %}
+	<section class="employee-section">
+		<form action="/searchEmployees" method="get" class="search-form">
+			<h3>Recherche employés</h3>
+			<input type="text" name="query" placeholder="Rechercher par nom, fonction..." class="search-input">
+			<button type="submit" class="search-button">Rechercher</button>
+		</form>
+		<h2>Mes Employés</h2>
+		{% if employees %}
+			{% for employee in employees %}
+				<article class="employee-card">
+					<div class="employee-info">
+						{% if employee.photo %}
+							<img src="/assets/img/uploads/{{employee.photo}}" alt="Photo de {{employee.name}}" class="employee-photo">
+						{% endif %}
+						<div class="container"></div>
+						<h3>{{employee.name}}</h3>
+						<p><strong>Fonction :</strong> {{employee.position}}</p>
+						<p><strong>Blâmes :</strong> {{employee.blame}}</p>
+						<form action="/increaseBlame/{{employee.id}}" method="post">
+							<button>Blame+1</button>
+						</form>
+					</div>
+					<div class="employee-actions">
+						<a href="/employeeupdate/{{employee.id}}" class="button">Modifier</a>
+						<a href="/employeedelete/{{employee.id}}" class="button">Supprimer</a>
+					</div>
+				</article>
+			{% endfor %}
+		{% else %}
+			<p>Veuillez entrer votre Premier employé</p>
+		{% endif %}
+	</section>
+{% endblock %}
+

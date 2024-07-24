@@ -1,0 +1,36 @@
+{% extends "../base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="/assets/css/addEmployee.css">
+{% endblock %}
+
+{% block main %}
+<section>
+    <div class="form-container">
+        {% if employee %}
+            <h2>Modifier un employé</h2>
+        {% else %}
+            <h2>Ajouter un employé</h2>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data" {% if employee %} action="/employeeUpdate/{{employee.id}}" {% else %} action="/addEmployee" {% endif %}>
+            <div>
+                <label for="name">Nom de l'employé</label>
+                <input id="name" type="text" name="name" value="{{employee.name}}">
+                {% if error %}
+                    <p class="error">{{error.errors.name.name}}</p>
+                {% endif %}
+            </div>
+            <div>
+                <label for="position">Position de l'employé</label>
+                <input type="text" name="position" id="position" value="{{employee.position}}">
+            </div>
+            <div>
+                <label for="img">Photo de l'employé</label>
+                <input type="file" name="img" id="img">
+            </div>
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
